@@ -1,6 +1,6 @@
 <img src="https://cldup.com/obCuOPH5UW.png" alt="errorist" style="width: 128px; height: 128px;"/> 
 
-# errorist [![Build Status](https://travis-ci.org/boneskull/errorist.svg?branch=master)](https://travis-ci.org/boneskull/errorist)
+# errorist [![npm version](https://badge.fury.io/js/errorist.svg)](http://badge.fury.io/js/errorist) [![Build Status](https://travis-ci.org/boneskull/errorist.svg?branch=master)](https://travis-ci.org/boneskull/errorist) [![Codacy Badge](https://www.codacy.com/project/badge/c9dc230d740b4e63bdd2a3fce9e7b141)](https://www.codacy.com/app/boneskull/errorist) 
 
 > If you don't have an Error, errorist gives you one 
 
