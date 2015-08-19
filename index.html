@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>errorist by boneskull</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>errorist</h1>
+        <p>If you don&#39;t have an Error, errorist gives you one</p>
+
+        <p class="view"><a href="https://github.com/boneskull/errorist">View the Project on GitHub <small>boneskull/errorist</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/boneskull/errorist/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/boneskull/errorist/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/boneskull/errorist">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://cldup.com/z7wCHQYuKW.svg" alt="errorist" width="128" height="128px"> </p>
+
+<h1>
+<a id="errorist---" class="anchor" href="#errorist---" aria-hidden="true"><span class="octicon octicon-link"></span></a>errorist <a href="http://badge.fury.io/js/errorist"><img src="https://badge.fury.io/js/errorist.svg" alt="npm version"></a> <a href="https://travis-ci.org/boneskull/errorist"><img src="https://travis-ci.org/boneskull/errorist.svg?branch=master" alt="Build Status"></a> <a href="https://www.codacy.com/app/boneskull/errorist"><img src="https://www.codacy.com/project/badge/c9dc230d740b4e63bdd2a3fce9e7b141" alt="Codacy Badge"></a>
+</h1>
+
+<blockquote>
+<p>If you don't have an Error, errorist gives you one </p>
+</blockquote>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-shell"><pre>$ npm install errorist</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-js"><pre><span class="pl-k">var</span> errorist <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>errorist<span class="pl-pds">'</span></span>);
+
+<span class="pl-k">function</span> <span class="pl-en">asyncFunc</span>(<span class="pl-smi">callback</span>) {
+  <span class="pl-c1">process</span>.<span class="pl-c1">nextTick</span>(<span class="pl-k">function</span>() {
+    <span class="pl-c1">callback</span>(<span class="pl-s"><span class="pl-pds">'</span>this is not an Error; it is a string<span class="pl-pds">'</span></span>);
+  });
+}
+
+<span class="pl-c1">asyncFunc</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>) {
+  <span class="pl-k">if</span> (err) {
+    <span class="pl-c">// you would never do a thing like throw a string, right?</span>
+    <span class="pl-k">throw</span> <span class="pl-c1">errorist</span>(err);
+  }
+});
+
+<span class="pl-c">// or with promises</span>
+<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>bluebird<span class="pl-pds">'</span></span>).<span class="pl-c1">promisify</span>(asyncFunc)()
+  .<span class="pl-c1">catch</span>(err) {
+    <span class="pl-c">// stack trace FTW</span>
+    <span class="pl-k">throw</span> <span class="pl-c1">errorist</span>(err);
+  });</pre></div>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<p>errorist's flow is a bit like this:</p>
+
+<ul>
+<li>If the value is an <code>Error</code>
+
+<ul>
+<li>
+<code>return</code> it.</li>
+</ul>
+</li>
+<li>If the value is a non-<code>null</code> object or function
+
+<ul>
+<li>and its <code>message</code> property is a <code>string</code>
+
+<ul>
+<li>
+<code>return</code> a new <code>Error</code> with the <code>message</code>.</li>
+</ul>
+</li>
+<li>otherwise
+
+<ul>
+<li>stringify the object into JSON </li>
+<li>upon success
+
+<ul>
+<li>
+<code>return</code> the stringified object as the <code>Error</code>'s <code>message</code>.<br>
+</li>
+</ul>
+</li>
+<li>otherwise
+
+<ul>
+<li>
+<code>return</code> an empty <code>Error</code> instance.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Otherwise
+
+<ul>
+<li>
+<code>return</code> an <code>Error</code> instance with the primitive, <code>null</code>, or <code>undefined</code> value as its message.</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>© 2015 <a href="https://boneskull.com">Christopher Hiller</a>.  Licensed MIT.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/boneskull">boneskull</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
