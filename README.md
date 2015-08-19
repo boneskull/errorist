@@ -1,4 +1,4 @@
-<img src="https://cldup.com/z7wCHQYuKW.svg" alt="errorist" width="128" height="128px"/> 
+<img src="https://cldup.com/NHiaVWJnrb.svg" alt="errorist"/>
 
 # errorist [![npm version](https://badge.fury.io/js/errorist.svg)](http://badge.fury.io/js/errorist) [![Build Status](https://travis-ci.org/boneskull/errorist.svg?branch=master)](https://travis-ci.org/boneskull/errorist) [![Codacy Badge](https://www.codacy.com/project/badge/c9dc230d740b4e63bdd2a3fce9e7b141)](https://www.codacy.com/app/boneskull/errorist) 
 
