@@ -1,3 +1,5 @@
+<img src="https://cldup.com/obCuOPH5UW.png" alt="errorist" style="width: 128px; height: 128px;"/> 
+
 # errorist [![Build Status](https://travis-ci.org/boneskull/errorist.svg?branch=master)](https://travis-ci.org/boneskull/errorist)
 
 > If you don't have an Error, errorist gives you one 
