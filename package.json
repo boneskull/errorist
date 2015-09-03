@@ -1,6 +1,6 @@
 {
   "name": "errorist",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "If you don't have an Error, errorist gives you one",
   "license": "MIT",
   "repository": "https://github.com/boneskull/errorist.git",
