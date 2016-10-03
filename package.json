@@ -19,31 +19,33 @@
   "keywords": [
     "error",
     "promise",
-    "instance"
+    "instance",
+    "exception",
+    "type-checking"
   ],
   "devDependencies": {
     "chai": "^3.0.0",
-    "chai-as-promised": "^5.1.0",
-    "codacy-coverage": "^1.1.2",
-    "codeclimate-test-reporter": "^0.1.0",
-    "eslint": "^1.1.0",
-    "grunt": "^0.4.5",
-    "grunt-bump": "^0.6.0",
-    "grunt-cli": "^0.1.13",
-    "grunt-dev-update": "^1.3.0",
-    "grunt-eslint": "^17.1.0",
-    "grunt-mocha-istanbul": "^3.0.1",
-    "istanbul-harmony": "^0.3.16",
-    "jit-grunt": "^0.9.1",
-    "load-grunt-config": "^0.17.1",
-    "mocha": "^2.2.5",
+    "chai-as-promised": "^6.0.0",
+    "codacy-coverage": "^2.0.0",
+    "codeclimate-test-reporter": "^0.4.0",
+    "eslint": "^3.7.1",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-dev-update": "^2.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "istanbul": "^0.4.5",
+    "jit-grunt": "^0.10.0",
+    "load-grunt-config": "^0.19.2",
+    "mocha": "^3.1.0",
     "pre-commit": "^1.1.1",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0",
     "time-grunt": "^1.2.1"
   },
   "dependencies": {
-    "lodash.iserror": "^3.0.1",
+    "lodash.iserror": "^3.1.1",
     "lodash.isobject": "^3.0.2"
   }
 }
